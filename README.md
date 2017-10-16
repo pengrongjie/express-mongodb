@@ -16,27 +16,27 @@ express+mongodb,实现CURE和登录注册
 ![](./doc/1508135638(1).png)
 ## 运行安装
 #### 克隆
-`
+```
 git clone https://github.com/pengrongjie/express-mongodb.git
-`
+```
 #### 安装
 ```
 cd express-mongodb
 cnpm install
 ```
 #### 修改数据库名字
-`
+```
 data/module.js
-`
+```
 修改为你自己想要的数据库名称
-`
+```
 mongoose.connect('mongodb://localhost:27017/test70');
-`
+```
 #### 运行
-`
+```
 npm start
-`
+```
 或者
-`
+```
 node app.js
-`
+```
