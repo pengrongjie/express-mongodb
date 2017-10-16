@@ -40,3 +40,7 @@ npm start
 ```
 node app.js
 ```
+#### 浏览器打开
+```
+http://localhost:3000/
+```
