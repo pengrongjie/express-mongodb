@@ -46,3 +46,22 @@ http://localhost:3000/
 ```
 ## 部署
 #### 推送demo文件夹到远程
+连接winSCP,出现根目录
+![](./doc/1508138439(1).png)
+进入/home,并且把demo文件夹复制进去
+![](./doc/1508138554(1).png)
+#### 阿里云pm2，永久运行
+启动
+```
+cd 进入./bin/www
+pm2 start www
+```
+暂停
+```
+pm2 stop www
+```
+列表
+```
+pm2 list
+```
+![](./doc/2153441650-59ded703b226d_articlex.png)
