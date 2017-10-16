@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+
+    <header id="header">
+      <div class="container">
+        <div class="header">
+          <div class="logo">
+            <a href="/"><img src="/images/logo.png" alt=""></a>
+          </div>
+          <div class="title">
+            <a href="/">欢迎来到我的博客</a>
+          </div>
+          <div class="my">
+            <% if(user && user.username){ %>
+            <a href="/admin"><%= user.username %></a>
+            <a href="/logout" class="logout">退出</a>
+            <% }else{ %>
+              <a href="/login">登录</a>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="table">
+      <div class="container">
+        <form action="/admin/adminAdd" method="post">
+          <div class="form-group">
+            <label >标题</label>
+            <input type="text" name="Title" class="form-control" placeholder="请输入标题">
+          </div>
+          <div class="form-group">
+            <label >内容</label>
+            <textarea name="Content" class="form-control"  rows="6" placeholder="请输入内容"></textarea>
+          </div>
+          <input type="hidden" name="Author" value="<%= user.username %>">
+
+          <input type="submit" name="" class="btn btn-info" value="发布文章">
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

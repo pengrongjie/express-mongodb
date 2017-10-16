@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <header id="header">
+      <div class="container">
+        <div class="header">
+          <div class="logo">
+            <a href="/"><img src="/images/logo.png" alt=""></a>
+          </div>
+          <div class="title">
+            <a href="/">欢迎来到我的博客</a>
+          </div>
+          <div class="my">
+            <a href="/login">登录</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <form action="/login" method="post">
+        <div class="form-group">
+          <label >用户名</label>
+          <input type="text" name="Name" class="form-control" placeholder="text">
+        </div>
+        <div class="form-group">
+          <label >密码</label>
+          <input type="password" name="Password" class="form-control"  placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-info">登录</button>
+        <a href="/register"><button type="button" class="btn btn-danger">注册</button></a>
+      </form>
+    </div>
+  </body>
+</html>

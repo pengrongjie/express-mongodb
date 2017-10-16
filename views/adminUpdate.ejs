@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <header id="header">
+      <div class="container">
+        <div class="header">
+          <div class="logo">
+            <a href="/"><img src="/images/logo.png" alt=""></a>
+          </div>
+          <div class="title">
+            <a href="/">欢迎来到我的博客</a>
+          </div>
+          <div class="my">
+            <% if(user && user.username){ %>
+            <a href="/admin"><%= user.username %></a>
+            <a href="/logout" class="logout">退出</a>
+            <% }else{ %>
+              <a href="/login">登录</a>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="table">
+      <div class="container">
+        <form action="/admin/adminUpdate" method="post">
+          <div class="form-group">
+            <label >标题</label>
+            <input type="text" name="Title" class="form-control" value="<%= item.title %>">
+          </div>
+          <div class="form-group">
+            <label >内容</label>
+            <textarea name="Content" class="form-control"  rows="8" cols="80"><%= item.content %></textarea>
+            <!-- <input type="text" name="Content" class="form-control" value="<%= item.content %>"> -->
+          </div>
+          <input type="hidden" name="Id" value="<%= item._id %>">
+          <input type="submit" name="" class="btn btn-info" value="修改文章">
+        </form>
+      </div>
+    </section>
+
+  </body>
+</html>

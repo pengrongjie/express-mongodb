@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <header id="header">
+      <div class="container">
+        <div class="header">
+          <div class="logo">
+            <a href="/"><img src="/images/logo.png" alt=""></a>
+          </div>
+          <div class="title">
+            <a href="/">欢迎来到我的博客</a>
+          </div>
+          <div class="my">
+            <% if(user && user.username){ %>
+            <a href="/admin"><%= user.username %></a>
+            <a href="/logout" class="logout">退出</a>
+            <% }else{ %>
+              <a href="/login">登录</a>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="main">
+      <div class="main container">
+        <div class="main-item">
+            <p class="title"><%= item.title %></p>
+            <p class="info">
+              时间:<span><%= item.date %></span>
+              作者:<span><%= item.author %></span>
+              浏览: <span><%= item.views %></span>
+            </p>
+            <p class="desc"><%= item.content %></p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

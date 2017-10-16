@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+  </head>
+  <body>
+    <header id="header">
+      <div class="container">
+        <div class="header">
+          <div class="logo">
+            <a href="/"><img src="/images/logo.png" alt=""></a>
+          </div>
+          <div class="title">
+            <a href="/">欢迎来到我的博客</a>
+          </div>
+          <div class="my">
+            <% if(user && user.username){ %>
+            <a href="/admin"><%= user.username %></a>
+            <a href="/logout" class="logout">退出</a>
+            <% }else{ %>
+              <a href="/login">登录</a>
+            <% } %>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section id="table">
+      <div class="container">
+        <h3><a href="/admin/adminAdd"><button type="button" class="btn btn-info" name="button">发布新文章</button></a></h3>
+        <table class="table table-bordered">
+          <tr>
+            <th>_id</th>
+            <th>title</th>
+            <th>content</th>
+            <th>author</th>
+            <th>date</th>
+            <th>修改</th>
+            <th>删除</th>
+          </tr>
+
+          <% items.forEach(function(item){ %>
+          <tr>
+            <td><%= item._id %></td>
+            <td><%= item.title %></td>
+            <td><%= item.content %></td>
+            <td><%= item.author %></td>
+            <td><%= item.date %></td>
+            <td><a href="/admin/adminUpdate?_id=<%= item._id %>"><button type="button" class="btn btn-success btn-xs" name="button">修改</button></a></td>
+            <td><a href="/admin/adminDel?_id=<%= item._id %>"><button type="button" class="btn btn-danger btn-xs" name="button">删除</button></a></td>
+          </tr>
+          <% }); %>
+
+        </table>
+      </div>
+    </section>
+  </body>
+</html>
