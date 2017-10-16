@@ -14,7 +14,7 @@ express+mongodb,实现CURE和登录注册
 ![](./doc/1508135632(1).png)
 #### 详情页面
 ![](./doc/1508135638(1).png)
-## 运行安装
+## 运行
 #### 克隆
 ```
 git clone https://github.com/pengrongjie/express-mongodb.git
@@ -44,3 +44,5 @@ node app.js
 ```
 http://localhost:3000/
 ```
+## 部署
+#### 推送demo文件夹到远程
